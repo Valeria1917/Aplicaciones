@@ -1,0 +1,72 @@
+<div class="title">
+  <h1>Experiencias</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="table-responsive mt-4">
+        <table class="table table-striped" id="lista">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Costo</th>
+              <th>Capacidad</th>
+              <th>Servicios</th>
+              <th>Tipo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of experiencias; let i = index">
+              <td>{{ item.nom }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td>{{ item.costo }}</td>
+              <td>{{ item.capacidad }}</td>
+              <td>{{ item.servicios }}</td>
+              <td>{{ item.tipo }}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-warning btn-rm" (click)="editExperiencia(item)">Editar</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteExperiencia(item.id_Experiencia)">Eliminar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-4 ml-auto custom-col">
+      <h2>Experiencia</h2>
+      <form [formGroup]="experienciasForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nom">Nombre</label>
+          <input type="text" class="form-control" id="nom" formControlName="nom">
+          <label for="descripcion">Descripción</label>
+          <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+          <label for="costo">Costo</label>
+          <input type="number" class="form-control" id="costo" formControlName="costo">
+          <label for="capacidad">Capacidad</label>
+          <input type="number" class="form-control" id="capacidad" formControlName="capacidad">
+          <label for="servicios">Servicios</label>
+          <input type="text" class="form-control" id="servicios" formControlName="servicios">
+          <label for="tipo">Tipo</label>
+          <select class="form-control" id="tipo" formControlName="tipo">
+            <option value="Restaurante"></option>
+            <option value="Hotel">Experiencia</option>
+            <!-- Agrega más opciones si es necesario -->
+          </select>
+        </div>
+        <div class="row mt-3">
+          <button type="submit" class="btn btn-success" *ngIf="!isEditing">Agregar</button>
+          <button type="submit" class="btn btn-success" *ngIf="isEditing">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>
+
+
