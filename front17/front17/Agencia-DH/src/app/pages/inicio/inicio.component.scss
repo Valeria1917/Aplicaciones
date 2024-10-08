@@ -60,3 +60,81 @@
     margin-bottom: 0.3em;
     border-radius: 5px;
 }
+.comment-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f5dc 0%, #d2b48c 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8b4513;
+  }
+  
+  .comment__textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fffaf0;
+    color: #5f4b32;
+  }
+  
+  .comment__textarea::placeholder {
+    color: #a08060;
+    font-style: italic;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .comment__submit {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .comment__submit:hover {
+    background-color: #a0522d;
+  }
+  
+  .comment__submit:active {
+    background-color: #6b4226;
+  }
+  
+  .comment-section {
+    animation: fadeIn 2s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
