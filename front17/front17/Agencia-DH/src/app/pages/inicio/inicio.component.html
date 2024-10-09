@@ -33,7 +33,6 @@
   <!-- Mapa -->
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59535.14602043288!2d-100.9732015515938!3d21.15452226448083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b3c037b45da91%3A0x31b943f4e3ce4942!2sDolores%20Hidalgo%20Cuna%20de%20la%20Independencia%20Nacional%2C%20Gto.!5e0!3m2!1ses!2smx!4v1726628356778!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   
-
   <main class="main">
     <section>
       <h1 class="title">Dolores Hidalgo C.I.N.</h1>
@@ -49,7 +48,7 @@
         En algún momento antes de la llegada de los españoles se conocía como “Cocomán”: lugar donde se cazan las tórtolas. Los conquistadores dieron origen al pueblo que conocemos en 1710, con la construcción de la Parroquia de Nuestra Señora de los Dolores. En 1947, el Presidente Miguel Alemán lo denomina Dolores Hidalgo, Cuna de la Independencia Nacional.
       </p>
       <p>
-        Ubicado a 2,300 metros de altura, posee una <b>temperatura media de 25º C</b>, con pocas lluias a fines del verano. Posee un clima semiárido. En sus tierras se cultivan uvas, chile verde, alfalfa y avena forrajera. La principal actividad ganadera es la cría de ganado ovino, por parte de servicios la principal actividad es el turismo.
+        Ubicado a 2,300 metros de altura, posee una <b>temperatura media de 25º C</b>, con pocas lluvias a fines del verano. Posee un clima semiárido. En sus tierras se cultivan uvas, chile verde, alfalfa y avena forrajera. La principal actividad ganadera es la cría de ganado ovino, por parte de servicios la principal actividad es el turismo.
       </p>
       <p>
         Dolores Hidalgo posee una cocina local rica, prueba los chiles de chorro o el mole de la región; obligados son los helados con sabores de queso, nopal, cerveza, aguacate, y tequila. Como recuerdo busca las hermosas artesanías locales de cerámica mayólica y alfarería; particularmente la cerámica en talavera.
@@ -108,10 +107,13 @@
       </div>
     </section>
 
+    <!-- Sección para mostrar datos de Facebook -->
+    
+    
+
     <!-- Sección de comentarios al final -->
     <section class="comment-section">
       <form id="commentForm" action="https://formspree.io/f/xdkonpdj" method="POST">
-        
         <div>
           <label for="comentario">Comentario:</label>
           <textarea id="comentario" name="comentario" required placeholder="Escribe tu comentario aquí..." class="comment__textarea"></textarea>
@@ -121,25 +123,35 @@
         </div>
       </form>
     </section>
-    <a href="https://www.facebook.com/share/sGcSYceiiDCBdKn5/?mibextid=LQQJ4d" target="_blank" class="logo-link">Facebook</a>
-
+    
+    
     <a href="https://www.instagram.com/agencia_dh12?igsh=MTh4Y3Z4aGVoMG90bw%3D%3D&utm_source=qr" target="_blank" class="logoo-link">Instagram</a>
-
-  
   </main>
-  
+
   <script>
     document.getElementById('commentForm').addEventListener('submit', function(event) {
-      // Dejar que el formulario se envíe normalmente
       setTimeout(function() {
-        // Limpiar el campo del comentario después de que el formulario se haya enviado
         document.getElementById('comentario').value = '';
-      }, 100); // Tiempo de espera corto para asegurar que el formulario se envíe antes de limpiar
+      }, 100);
+    });
+
+    document.getElementById('fetchDataButton').addEventListener('click', async () => {
+      const token = '89bd22a303715d9d47911cea1f55ed51';
+      const appId = '1605090010078361'; // ID de la aplicación
+      const url = `https://www.facebook.com/profile.php?id=61566866405015=${token}`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Error al obtener los datos');
+
+        const data = await response.json();
+        document.getElementById('dataDisplay').innerText = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('dataDisplay').innerText = 'Error: ' + error.message;
+      }
     });
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://www.facebook.com/profile.php?id=61566866405015"></script>
 </body>
 </html>
-
-
