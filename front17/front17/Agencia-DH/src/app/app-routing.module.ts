@@ -18,6 +18,8 @@ import { Parte4Component } from './pages/paquetes-personalizados/parte4/parte4.c
 import { gestorGuard } from './guard/gestor.guard';
 import { RecuperarPComponent } from './pages/correoRec/recuperarP.component';
 import { ContraRecComponent } from './pages/contraRec/contraRec.component';
+import { SpotifyComponent } from './spotify/spotify.component';
+import { VideollamadaComponent } from './videollamada/videollamada.component';
 
 
 const routes: Routes = [
@@ -37,6 +39,9 @@ const routes: Routes = [
   {path:'parte4', component:Parte4Component, canActivate: [userGuard]},
   {path:'parte5', component:Parte5Component, canActivate: [userGuard]},
   // {path:'admin-personalizados', component:AdminPaquetesPersoComponent},
+
+  { path: 'spotify', component: SpotifyComponent },
+  {path: 'videollamada', component: VideollamadaComponent},
 
   {path:'404', component:Error404PageComponent},
   {path:'**',redirectTo:'404'},
