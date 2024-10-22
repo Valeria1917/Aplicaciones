@@ -29,6 +29,7 @@ import { DialogContentExampleDialog } from './shared/directives/dialog-content/d
 import { RecuperarPComponent } from './pages/correoRec/recuperarP.component';
 import { ContraRecComponent } from './pages/contraRec/contraRec.component';
 
+
 //enviar al header
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
@@ -39,6 +40,9 @@ import { Parte4Component } from './pages/paquetes-personalizados/parte4/parte4.c
 import { Parte5Component } from './pages/paquetes-personalizados/parte5/parte5.component';
 import { Parte2Component } from './pages/paquetes-personalizados/parte2/parte2.component';
 import { PaquetesPersonalizadosComponent } from './pages/paquetes-personalizados/paquetes-personalizados.component';
+import { SpotifyComponent } from './spotify/spotify.component';
+import { VideollamadaComponent } from './videollamada/videollamada.component';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,9 @@ import { PaquetesPersonalizadosComponent } from './pages/paquetes-personalizados
     Parte3Component,
     Parte4Component,
     Parte5Component,
-    PaquetesPersonalizadosComponent
+    PaquetesPersonalizadosComponent,
+    SpotifyComponent,
+    VideollamadaComponent
   ],
   imports: [
     BrowserModule,
