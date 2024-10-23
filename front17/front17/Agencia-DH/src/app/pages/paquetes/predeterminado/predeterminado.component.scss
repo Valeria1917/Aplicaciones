@@ -227,3 +227,34 @@ a:visited{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+.spotify-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #9a35e7; // Color de fondo de Spotify
+  color: white; // Color del texto
+  font-size: 16px; // Tamaño de fuente
+  font-weight: bold; // Negrita
+  text-align: center; // Centrar texto
+  border: none; // Sin borde
+  border-radius: 30px; // Bordes redondeados
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Sombra
+  cursor: pointer; // Cursor de puntero
+
+  // Efecto de transición
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  // Efecto hover
+  &:hover {
+    background-color: #584df3; // Color más oscuro al pasar el mouse
+    transform: translateY(-2px); // Levantar ligeramente el botón
+  }
+
+  // Efecto active
+  &:active {
+    transform: translateY(0); // Volver a la posición original al hacer clic
+  }
+}
+
+
+ 
+  
