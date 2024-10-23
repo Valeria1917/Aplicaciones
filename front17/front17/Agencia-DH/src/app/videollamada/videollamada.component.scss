@@ -1,36 +1,25 @@
-.video-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .video-stream {
-    width: 600px;
-    height: 400px;
-    margin: 10px auto;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-  }
-  
-  .controls {
-    margin-top: 20px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #555;
-    color: #fff;
-  }
-  
+.video-call-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px; /* Puedes ajustar la altura mínima */
+  position: relative;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
   
